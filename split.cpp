@@ -11,13 +11,50 @@ the function below should be the only one in this file.
 */
 
 #include "split.h"
-
+//#include <iostream>
+//using namespace std;
 /* Add a prototype for a helper function here if you need */
 
 void split(Node*& in, Node*& odds, Node*& evens)
 {
   /* Add code here */
 // WRITE YOUR CODE HERE
+
+if(in == nullptr){
+
+}else{
+  if(in->next == nullptr){  //END OF LIST EOL
+
+      if(in->value % 2 != 0){ //Odd Value
+        //cout << in->value << " is ODD" << endl;
+        odds = new Node(in->value, nullptr);
+      }else{
+        //cout << in->value << " is EVEN" << endl;
+        evens = new Node(in->value, nullptr);
+      }
+
+      delete in;
+      in = nullptr;
+  }else{
+    //Head Recursion
+    
+
+      if(in->value % 2 != 0){ //Odd Value
+        //cout << in->value << " is ODD" << endl;
+        odds = new Node(in->value, nullptr);
+        split(in->next, odds->next, evens);
+      }else{
+        //cout << in->value << " is EVEN" << endl;
+        evens = new Node(in->value, nullptr);
+        split(in->next, odds, evens->next);
+      }
+      delete in;
+      in = nullptr;
+  }
+
+}
+  
+  
 }
 
 /* If you needed a helper function, write it here */
