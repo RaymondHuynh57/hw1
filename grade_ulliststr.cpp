@@ -124,7 +124,7 @@ testing::AssertionResult checkListContent(ULListStr *const list, std::vector<std
 	return testing::AssertionSuccess();
 }
 
-TEST(ListInsertBack, OneItemAdd)
+TEST(ListInsertBack, OneItemAdd)  //
 {
 	ULListStr list;
 
@@ -134,7 +134,7 @@ TEST(ListInsertBack, OneItemAdd)
 	EXPECT_EQ(false, list.empty());
 }
 
-TEST(ListInsertFront, OneItemAdd)
+TEST(ListInsertFront, OneItemAdd) //
 {
 	ULListStr list;
 
@@ -145,7 +145,7 @@ TEST(ListInsertFront, OneItemAdd)
 }
 
 
-TEST(ListInsert, EmptyString)
+TEST(ListInsert, EmptyString) //
 {
 	ULListStr list;
 
@@ -156,7 +156,7 @@ TEST(ListInsert, EmptyString)
 }
 
 // add three items and check that they're there
-TEST(ListInsertBack, ThreeItemAdd)
+TEST(ListInsertBack, ThreeItemAdd)  //
 {
 	// first we create a vector to hold our data
 	std::vector<std::string> contents{"768", "1024", "1536"};
